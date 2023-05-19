@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 const cors = require("cors");
-const productsController= require('./controllers/productsController')
+const categoryController= require('./controllers/categoryController')
 
 // CONTROLLERS
 
@@ -17,7 +17,7 @@ const productsController= require('./controllers/productsController')
      res.send("Welcome to the Modesty App");
  });
 
- app.use('/products',productsController)
+ app.use('/category',categoryController)
  
 
 

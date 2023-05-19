@@ -9,6 +9,8 @@ const {
   updateCategory,
   deleteCategory
 } = require('../queries/category');
+const validateCategory = require('../validations /categoryValidator');
+
 
 //localhost:3300/category/:categoryId/products
 category.use("/:categoryId/products",productController)
@@ -27,6 +29,7 @@ category.get("/", async (req,res)=>{
 //GET /Album/ :id
 category.get("/:categoryId", async(req,res)=>{
   const {categoryId} = req.params
+  
   const catgory = await getCategory(categoryId);
   if(catgory.error != "error"){
     res.status(200).json(catgory)
@@ -37,14 +40,25 @@ category.get("/:categoryId", async(req,res)=>{
 
 //create one catgory --> insert into category
 //POST /catgory
-category.post("/", async (req, res)=>{
-  const newCategory = await createCategory(req.body);
-  if(!newCategory.error){
-    res.status(200).json(newCategory);
-  }else{
-    res.status(404).json({error: "server error"})
+category.post("/", async (req, res) => {
+  const { name, description } = req.body;
+
+  // Validate the request body using the imported validator
+  const { error } = validateCategory({ name, description });
+
+  if (error) {
+    res.status(400).json({ error: error.details[0].message });
+    return;
   }
-})
+
+  const newCategory = await createCategory(req.body);
+  if (!newCategory.error) {
+    res.status(200).json(newCategory);
+  } else {
+    res.status(404).json({ error: "server error" });
+  }
+});
+
 
 //update
 

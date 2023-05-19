@@ -14,7 +14,7 @@ const getAllCategory = async ()=>{
 //show
 const getCategory = async (id)=>{
   try{
-    const category = await db.one("SELECT * FROM category WHERE product_id = $1", [id]);
+    const category = await db.one("SELECT * FROM category WHERE category_id = $1", [id]);
 
     return category;
   }catch (error){
@@ -46,7 +46,8 @@ const updateCategory = async (categoryId, category) =>{
 //delete
 const deleteCategory = async (id) =>{
   try{
-    const deleteCategory = await db.one(`DELETE FROM category WHERE category_id = $1`)
+    const deletedCategory = await db.one(`DELETE FROM category WHERE category_id = $1 RETURNING *`,[id])
+    return deletedCategory
   }catch (err){
     return {error:err}
   }
