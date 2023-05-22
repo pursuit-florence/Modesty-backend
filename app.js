@@ -18,5 +18,7 @@ const categoryController= require('./controllers/categoryController')
  });
 
  app.use('/category',categoryController)
+ 
+
 
 module.exports = app;
