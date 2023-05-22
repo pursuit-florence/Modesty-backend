@@ -23,6 +23,8 @@ CREATE TABLE products (
   FOREIGN KEY (category_id) REFERENCES category (category_id) ON DELETE CASCADE
 );
 
+
+
 -- CREATE TABLE orders (
 --   orders_id SERIAL PRIMARY KEY,
 --   customer_id INT NOT NULL,

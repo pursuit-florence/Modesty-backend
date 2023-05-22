@@ -3,7 +3,7 @@ const db = require('../db/dbConfig')
 //index
 const getAllProductsByCategory = async (id)=>{
   try{
-    const allProducts = await db.any("SELECT * FROM products where category_id= $1", [id])
+    const allProducts = await db.any("SELECT * FROM products where category_id = $1", [id])
    return allProducts;
   }catch (err){
     return err
