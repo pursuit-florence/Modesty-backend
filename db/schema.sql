@@ -3,11 +3,7 @@ CREATE DATABASE themodestydb;
 
 \c themodestydb;
 
-CREATE TABLE category(
-  category_id SERIAL PRIMARY KEY,
-  name TEXT,
-  description TEXT
-);
+
 
 CREATE TABLE products (
   product_id SERIAL PRIMARY KEY,
@@ -22,8 +18,6 @@ CREATE TABLE products (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (category_id) REFERENCES category (category_id) ON DELETE CASCADE
 );
-
-
 
 -- CREATE TABLE orders (
 --   orders_id SERIAL PRIMARY KEY,
