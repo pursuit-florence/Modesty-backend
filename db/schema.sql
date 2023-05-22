@@ -3,7 +3,11 @@ CREATE DATABASE themodestydb;
 
 \c themodestydb;
 
-
+CREATE TABLE category(
+  category_id SERIAL PRIMARY KEY,
+  name TEXT,
+  description TEXT
+);
 
 CREATE TABLE products (
   product_id SERIAL PRIMARY KEY,
