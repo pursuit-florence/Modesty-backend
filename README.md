@@ -48,7 +48,7 @@ To get started with the development of the Modesty Apparel App:
 4. Regularly communicate, share progress, and seek assistance when needed.
 
 ## Deployment
-The backend server is deployed on Render and can be accessed at [The Modesty Apparel Backend](https://github.com/pursuit-florence/Modesty-backend). The frontend application is deployed on Netlify and can be accessed at [The Modesty Apparel Frontend](https://github.com/pursuit-florence/Modesty-frontend).
+The backend server is deployed on Render and can be accessed at [The Modesty Apparel Backend](https://modest-backend.onrender.com). The frontend application is deployed on Netlify and can be accessed at [The Modesty Apparel Frontend](https://super-sundae-459a13.netlify.app).
 
 ## Installation
 To install and run the Modesty Apparel App locally, follow these steps:
