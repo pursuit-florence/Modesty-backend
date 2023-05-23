@@ -77,7 +77,7 @@ psql -f db/seed.sql
 npm start
 
 
-The backend server will run on [The Modesty Apparel Backend](http://localhost:3300).
+The backend server will run on [The Modesty Apparel localhost Backend](http://localhost:3300).
 
 ## API Endpoints
 - GET /api/categories: Get all categories.
